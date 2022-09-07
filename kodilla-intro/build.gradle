@@ -15,17 +15,5 @@ dependencies {
 }
 
 test {
-    /* [3] */
     useJUnitPlatform()
-}
-public class HelloWorld {                           // [1]
-    public static void main(String[] args) {         // [2]
-        System.out.println ("Hello World");
-        System.out.String ("Adrian");
-        System.out.int (23);
-        System.out.char ('Ś');
-
-
-
-    }
 }
