@@ -1,8 +1,8 @@
 public class Notebook {
-    static int weight;
-    static int price;
+    int weight;
+    int price;
 
-    static int year;
+    int year;
 
     public Notebook(int weight, int price, int year) {
         this.weight = weight;
@@ -11,30 +11,30 @@ public class Notebook {
     }
 
     public void checkPrice() {
-        if (Notebook.price < 600) {
+        if (this.price < 600) {
             System.out.println("This notebook is very cheap.");
-        } else if (Notebook.price > 1400) {
+        } else if (this.price > 1400) {
             System.out.println("This notebook is expensive.");
-        } else if (Notebook.price >= 700 && Notebook.price <= 1300)
+        } else if (this.price >= 700 && this.price <= 1300)
             System.out.println("The price is good.");
     }
 
     public void checkWeight() {
-        if (Notebook.weight <= 600) {
+        if (this.weight <= 600) {
             System.out.println("This notebook is too light.");
-        } else if (Notebook.weight > 1800) {
+        } else if (this.weight > 1800) {
             System.out.println("This notebook is too heavy.");
-        } else if (Notebook.weight >= 700 && Notebook.weight <= 1700)
+        } else if (this.weight >= 700 && this.weight <= 1700)
             System.out.println("The weight is good.");
     }
 
     public void checkYear() {
         int year;
-        if (Notebook.year <= 2012) {
+        if (this.year <= 2012) {
             System.out.println("This notebook is old.");
-        } else if (Notebook.year >= 2020 && Notebook.year <= 2021) {
+        } else if (this.year >= 2020 && this.year <= 2021) {
             System.out.println("This notebook is fairly recent.");
-        } else if (Notebook.year >= 2022) {
+        } else if (this.year >= 2022) {
             System.out.println("This notebook is new.");
         }
     }
