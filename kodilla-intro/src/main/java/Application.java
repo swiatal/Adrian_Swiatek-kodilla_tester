@@ -8,18 +8,21 @@ public class Application {
         this.age = age;
         this.height = height;
     }
-
-
-    public static void main(String[] args) {
-        Application sb = new Application("Adam",40.5,178);
-System.out.println(sb.name);
-
-        if (sb.name != null) {
-            if (sb.age > 30 && sb.height > 160) {
+    void validateParams() {
+        if (this.name != null) {
+            if (this.age > 30 && this.height > 160) {
                 System.out.println("User is older than 30 and taller than 160cm");
             } else {
                 System.out.println("User is 30 (or younger) or 160cm (or shorter)");
             }
+
         }
     }
-}
+
+    public static void main(String[] args) {
+        Application app = new Application("Adam",40.5,178);
+System.out.println(app.name);
+app.validateParams();
+      }
+    }
+
