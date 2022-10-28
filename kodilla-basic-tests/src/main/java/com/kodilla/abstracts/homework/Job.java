@@ -13,7 +13,7 @@ public abstract class Job {
         return salary;
 
     }
-        public String getResponsibilities (){
+        public String getResponsibilities () {
         return responsibilities;
     }
     public abstract void responsibilitiesInWork();
