@@ -54,4 +54,11 @@ public class Student {
     public double getHistoryAverage() {
         return this.history.GetAverage();
     }
+    public double GetAverage() {
+        return -1;
+    }
+    public double getAverage() {
+        double sum = this.geography.GetAverage() + this.history.GetAverage() + this.maths.GetAverage() + this.physics.GetAverage();
+        return sum/4;
+    }
 }
