@@ -23,7 +23,9 @@ public class CashMachine {
 
         return transactions;
     }
-
+    public int getSize() {
+        return size;
+}
     public int getSaldo() {
 
         int suma = 0;

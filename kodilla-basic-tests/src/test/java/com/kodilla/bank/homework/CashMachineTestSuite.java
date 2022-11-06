@@ -7,22 +7,17 @@ import org.junit.jupiter.api.Test;
 public class CashMachineTestSuite {
 
     @Test
-    public void shouldHaveZeroLength() {
+    public void getSaldoTest() {
         CashMachine cashMachine = new CashMachine();
-        int[] values = cashMachine.getValues();
-        assertEquals(0, values.length);
+    cashMachine.add(600);
+    cashMachine.add(-300);
+        assertEquals(300, cashMachine.getSaldo());
     }
     @Test
-    public void shouldHaveZeroLength1() {
+    public void getCount() {
         CashMachine cashMachine = new CashMachine();
-        int[] transactions = cashMachine.getTransactions();
-        assertEquals(0, transactions.length);
-    }
-
-    @Test
-    public void shouldReturnBalance() {
-        CashMachine cashMachine = new CashMachine();
-       cashMachine.addTransactions(1000);
-        assertEquals (0, cashMachine.getBalance());
+       cashMachine.add(50);
+       cashMachine.add(-30);
+        assertEquals(2, cashMachine.getCount());
     }
 }

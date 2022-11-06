@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class BankTestSuite {
 
     @Test
-    public void shouldCalculateBalance() {
+    public void balans() {
         CashMachine cashMachinery = new CashMachine();
         CashMachine cashMachinery2 = new CashMachine();
         cashMachinery.add(5);
@@ -16,7 +16,7 @@ public class BankTestSuite {
         Bank bank = new Bank();
         bank.addCashMachine(cashMachinery2);
         bank.addCashMachine(cashMachinery);
-        double result = bank.balans();
+        int result = bank.balans();
         assertEquals(-6, result);
     }
 
