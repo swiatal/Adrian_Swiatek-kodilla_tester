@@ -22,11 +22,11 @@ public class Ford implements Car {
 
     public void getIncreaseSpeed() {
 
-        return final_speed-start_speed/time_elapsed;
+        final_speed=start_speed/time_elapsed;
     }
     public void getDecreaseSpeed() {
 
-        return  start_speed-final_speed/time_elapsed;
+        start_speed=final_speed/time_elapsed;
 }
 }
 
