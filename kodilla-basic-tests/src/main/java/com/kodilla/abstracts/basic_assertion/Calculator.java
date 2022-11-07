@@ -1,4 +1,4 @@
-package com.kodilla.basic_assertion;
+package com.kodilla.abstracts.basic_assertion;
 import java.lang.Math;
 public class Calculator {
     public int sum(int a, int b) {

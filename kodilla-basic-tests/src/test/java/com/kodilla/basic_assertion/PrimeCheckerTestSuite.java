@@ -1,5 +1,6 @@
 package com.kodilla.basic_assertion;
 
+import com.kodilla.abstracts.basic_assertion.PrimeChecker;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;

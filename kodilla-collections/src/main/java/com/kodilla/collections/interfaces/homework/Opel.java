@@ -20,12 +20,12 @@ public class Opel implements Car {
     }
 
     @Override
-    public int getIncreaseSpeed() {
+    public void getIncreaseSpeed() {
         return final_speed-start_speed/time_elapsed;
     }
 
     @Override
-    public int getDecreaseSpeed() {
+    public void getDecreaseSpeed() {
         return  start_speed-final_speed/time_elapsed;
     }
 }

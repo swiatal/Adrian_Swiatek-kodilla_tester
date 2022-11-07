@@ -1,4 +1,4 @@
-package com.kodilla.basic_assertion;
+package com.kodilla.abstracts.basic_assertion;
 
 //import static org.junit.jupiter.api.Assertions.assertEquals;
 

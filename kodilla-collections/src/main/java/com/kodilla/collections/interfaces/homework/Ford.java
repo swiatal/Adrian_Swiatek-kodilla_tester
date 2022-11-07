@@ -8,7 +8,7 @@ public class Ford implements Car {
     private int start_speed;
     private int final_speed;
 
-    public Ford(int distance_traveled, int time_elapsed, int start_speed, int final_speed) {
+    public Ford(int distance_traveled, int time_elapsed,int  start_speed, int final_speed) {
         this.distance_traveled = distance_traveled;
         this.time_elapsed = time_elapsed;
         this.start_speed = start_speed;
@@ -20,11 +20,11 @@ public class Ford implements Car {
         return  distance_traveled/time_elapsed;
     }
 
-    public int getIncreaseSpeed() {
+    public void getIncreaseSpeed() {
 
         return final_speed-start_speed/time_elapsed;
     }
-    public int getDecreaseSpeed() {
+    public void getDecreaseSpeed() {
 
         return  start_speed-final_speed/time_elapsed;
 }
