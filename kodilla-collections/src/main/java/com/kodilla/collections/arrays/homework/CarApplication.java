@@ -42,11 +42,11 @@ public class CarApplication {
         else {
             int b = getRandomSize();
             int c = getRandomSize();
-            return new Opel(a, b, c);
+            return new Opel(a);
         }
     }
     //Utworzono metodę getRandomSize
-    private static double getRandomSize() {
+    private static int getRandomSize() {
         return RANDOM.nextInt() * 100 + 1;
     }
 }

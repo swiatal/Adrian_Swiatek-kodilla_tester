@@ -1,12 +1,8 @@
 //Utowrzono pakiet
-package com.kodilla.collections.arrays;
+package com.kodilla.collections.interfaces;
 //zaimporotwano pakiety, które będzie używał program. Deklaracja imporotwa musi byc po zestawieniu pakietów przed deklaracją klasy
-import com.kodilla.collections.interfaces.Circle;
-import com.kodilla.collections.interfaces.Shape;
-import com.kodilla.collections.interfaces.Square;
-import com.kodilla.collections.interfaces.Triangle;
 
-//Utworzono klasę, która posiada metodę wyświetlającą szczegóły dowolnej figury.
+//Utworzono klasę narzędziową, która posiada metodę wyświetlającą szczegóły dowolnej figury.
 public class ShapeUtils {
 
     //Utworzono metodę, która ma wyświetlić informacje o kształcie figury.

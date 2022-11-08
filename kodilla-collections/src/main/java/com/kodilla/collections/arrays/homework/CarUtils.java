@@ -11,7 +11,7 @@ import com.kodilla.collections.interfaces.homework.Ford;
 public class CarUtils {
     public static void describeCar(Car car) {
         System.out.println("-----------------------------");
-        System.out.println("Car increaseSpeed:" + car.getIncreaseSpeed());
+        car.getIncreaseSpeed();
         System.out.println("getSpeed: " + car.getSpeed());
     }
 //Utworzono metodę, która ma wyświetlić informacje o modelu auta.

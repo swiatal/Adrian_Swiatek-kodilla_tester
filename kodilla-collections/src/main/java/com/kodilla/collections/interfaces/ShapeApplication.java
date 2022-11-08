@@ -1,10 +1,7 @@
 //Utworzono pakiet
-package com.kodilla.collections.arrays;
+package com.kodilla.collections.interfaces;
 //zaimportowano pakiety
-import com.kodilla.collections.interfaces.Circle;
-import com.kodilla.collections.interfaces.Shape;
-import com.kodilla.collections.interfaces.Square;
-import com.kodilla.collections.interfaces.Triangle;
+import com.kodilla.collections.interfaces.*;
 
 import java.util.Random;
 //Utworzono klase ShapeApplication
@@ -24,7 +21,7 @@ public class ShapeApplication {
             ShapeUtils.displayShapeInfo(shape);
     }
     //Dodajemy instrukcje warunkową
-    //Utworzono metode Shape
+    //Utworzono metode drawShape
     private static Shape drawShape() {
 //Na obiekcie klasy Rondom została wywołana metoda nextInt,
 // jako argument podano maksymalną wartość, do której mają być losowane liczby
