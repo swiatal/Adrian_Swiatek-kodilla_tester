@@ -4,6 +4,11 @@ public class Bank {
     private CashMachine[] values;
     private int size = 0;
 
+    public Bank() {
+        this.size = 0;
+        this.values = new CashMachine[0];
+    }
+
     public int balans() {
         int suma = 0;
         for (int i = 0; i < this.size; i++) {

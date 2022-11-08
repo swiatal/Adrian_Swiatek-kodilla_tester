@@ -62,7 +62,7 @@ public class BankTestSuite {
         bank.addCashMachine(cashMachinery2);
         bank.addCashMachine(cashMachinery);
         double result = bank.averageOfPayOut();
-        assertEquals(9.5, result);
+        assertEquals(-9.0, result);
     }
 
     @Test
@@ -77,6 +77,6 @@ public class BankTestSuite {
         bank.addCashMachine(cashMachinery2);
         bank.addCashMachine(cashMachinery);
         double result = bank.averageOfPayIn();
-        assertEquals(6.5, result);
+        assertEquals(6.0, result);
     }
 }
