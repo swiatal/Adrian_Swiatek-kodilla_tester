@@ -1,6 +1,8 @@
 package com.kodilla.collections.interfaces;
 
-class Square implements Shape {
+import java.util.Objects;
+
+public class Square implements Shape {
     private double width;
 
     public Square(double width) {
@@ -11,8 +13,28 @@ class Square implements Shape {
     }
 
     @Override
+    public String toString() {
+        return "Square{" +
+                "width=" + width +
+                '}';
+    }
+
+    @Override
     public double getPerimeter() {
         return  4 * width;
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Square square = (Square) o;
+        return Double.compare(square.width, width) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(width);
     }
 }
