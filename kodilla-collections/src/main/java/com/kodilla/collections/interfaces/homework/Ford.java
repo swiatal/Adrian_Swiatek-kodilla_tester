@@ -17,9 +17,18 @@ public class Ford implements Car {
 
         start_speed = start_speed + 15;
     }
+
+    @Override
+    public String toString() {
+        return "Ford{" +
+                "start_speed=" + start_speed +
+                '}';
+    }
+
     public void getDecreaseSpeed() {
 
-        start_speed=start_speed - 15;
+
+
 }
 }
 

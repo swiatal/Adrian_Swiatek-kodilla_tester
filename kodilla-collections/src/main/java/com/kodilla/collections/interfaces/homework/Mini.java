@@ -16,8 +16,16 @@ public class Mini implements Car{
         start_speed = start_speed + 10;}
 
     @Override
+    public String toString() {
+        return "Mini{" +
+                "start_speed=" + start_speed +
+                '}';
+    }
+
+    @Override
     public void getDecreaseSpeed() {
 
         start_speed=start_speed - 17;
+
     }
 }

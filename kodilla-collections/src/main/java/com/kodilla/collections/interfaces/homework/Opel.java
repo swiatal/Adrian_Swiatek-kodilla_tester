@@ -20,6 +20,13 @@ public class Opel implements Car {
     }
 
     @Override
+    public String toString() {
+        return "Opel{" +
+                "start_speed=" + start_speed +
+                '}';
+    }
+
+    @Override
     public void getDecreaseSpeed() {
         start_speed=start_speed - 5;
 
