@@ -9,12 +9,16 @@ public class School {
     public School(List<Double> school) {
         this.school = school;
     }
+
+    public double getAverage(){
+        double sum = 0.0;
+        for (double school : school)
+            sum += school;
+        return sum/ school.size();
+    }
     @Override
     public String toString() {
         return "School:" + school.toString();
-    }
-    public String getAverage() {
-      return "29";
     }
     }
 
