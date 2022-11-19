@@ -15,7 +15,7 @@ public class FlightTestSuite {
     //when
         List<Flight> result = FlightFinder.findFlightsFrom("Cracow");
         //then
-        List<Flight> flightsFrom = new ArrayList<>();
+       List<Flight> flightsFrom = new ArrayList<>();
         flightsFrom.add(new Flight("Cracow", "Warsaw"));
         flightsFrom.add(new Flight("Cracow","Manchester"));
         assertEquals(flightsFrom,result);
