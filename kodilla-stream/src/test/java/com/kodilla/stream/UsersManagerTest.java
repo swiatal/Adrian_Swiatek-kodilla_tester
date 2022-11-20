@@ -26,10 +26,11 @@ public class UsersManagerTest {
     @Test
     public void testGetUsersOlderThan() {
         //when
-        List<String> result = UsersManager. getUsersOlderThan(56);
+        List<String> result = UsersManager.getUsersOlderThan(56);
         //then
         List<String> usernames = new ArrayList<>();
         usernames.add(new String("Mike Ehrmantraut"));
+        assertEquals(usernames, result);
         assertEquals(1, result.size());
     }
 }
