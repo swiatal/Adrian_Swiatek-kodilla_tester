@@ -37,6 +37,7 @@ public class User {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return age == user.age && numberOfPost == user.numberOfPost && Objects.equals(username, user.username) && Objects.equals(group, user.group);
+        /*return Double.compare(age.age, age) == 0;*/
     }
 
     @Override

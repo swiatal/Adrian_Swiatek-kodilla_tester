@@ -21,6 +21,17 @@ public class UsersManagerTest {
         assertEquals(usernames, result);
         assertEquals(2, result.size());
     }
+
+
+    @Test
+    public void testGetUsersOlderThan() {
+        //when
+        List<String> result = UsersManager. getUsersOlderThan(56);
+        //then
+        List<String> usernames = new ArrayList<>();
+        usernames.add(new String("Mike Ehrmantraut"));
+        assertEquals(1, result.size());
+    }
 }
 
 
