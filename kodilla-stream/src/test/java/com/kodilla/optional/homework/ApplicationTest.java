@@ -11,7 +11,7 @@ public class ApplicationTest {
     @Test
     public void testGetReturnNames(){
      //when
-        List<Student> result = Application.main();
+        List<Student> result = Application.;
         //then
         List<Student> names = new ArrayList<>();
         List<Teacher> names1 = new ArrayList<>();
