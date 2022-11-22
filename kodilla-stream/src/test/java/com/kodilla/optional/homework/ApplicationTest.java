@@ -6,19 +6,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+//Klasa
 public class ApplicationTest {
-    @Test
+    //Test nr 1
+   @Test
     public void testGetReturnNames(){
-     //when
-        List<Student> result = Application.;
-        //then
-        List<Student> names = new ArrayList<>();
-        List<Teacher> names1 = new ArrayList<>();
-        names.add(new Student("Maciej Nowak", new Teacher("Zofia Tomczyk")));
-        assertEquals(names, result);
-        assertEquals(2, result.size());
+       Student student = new Student("Marek",new Teacher("Sebastian"));
+       String name = Application.teacherName(student);
+       assertEquals("Sebastian", name);
     }
-
+    @Test
+    public void testGetReturnUndefined(){
+       Student student = new Student("Jacek", null);
+       String name = Application.teacherName(student);
+       assertEquals("undefined", name);
+    }
 }
 
