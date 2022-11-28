@@ -2,13 +2,12 @@ package com.kodilla.exception.homework;
 import java.util.HashSet;
 import java.util.Set;
 public class Warehouse {
-
-    public static Set<Order> addOrder(Order order){
-        Set<Order> orders = new HashSet<>();
-        orders.add(order);
-        return orders;
+    /*
+            Set<Order> orders = new HashSet<>();
+    public static void addOrder(Order order){
+        orders.add(new Order(number));
     }
-    public static Set<Order> getOrder(String number) throws OrderDoesntExistException {
+    public Order getOrder (String number) throws OrderDoesntExistException {
         Set<Order> orders = Warehouse.addOrder(Order order)
                 .stream()
                 .filter(order->order.getNumber().equals("2022/2"))
@@ -19,4 +18,6 @@ public class Warehouse {
         }
         return orders;
     }
+
+     */
 }

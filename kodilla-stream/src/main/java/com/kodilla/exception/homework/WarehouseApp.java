@@ -3,6 +3,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class WarehouseApp {
+    /*
     public static void main(String[] args) throws OrderDoesntExistException {
         Warehouse warehouse = new Warehouse();
         warehouse.addOrder(new Order("2022/2"));
@@ -18,5 +19,7 @@ public class WarehouseApp {
            }
 
     }
+
+     */
 }
 
