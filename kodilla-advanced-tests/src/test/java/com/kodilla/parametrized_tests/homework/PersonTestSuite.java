@@ -13,7 +13,7 @@ public class PersonTestSuite {
     @ParameterizedTest
     //test z danymi zawartymi w innej klasie
     @MethodSource(value = "com.kodilla.parametrized_tests.homework.DoubleSources#personBMIList")
-    public void shouldCalculatorBMI3(double weight, double height, String expected){
+    public void shouldCalculatorBMI3(double height, double weight, String expected){
         Person person =new Person(height, weight);
         assertEquals(expected, person.getBMI());
     }
