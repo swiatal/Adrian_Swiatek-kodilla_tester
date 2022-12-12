@@ -9,16 +9,16 @@ public class WeatherAlertServiceTestSuite {
     //Tworzymy mocka dla klas Client, Notification, Location
     Client client = Mockito.mock(Client.class);
     Notification notification = Mockito.mock(Notification.class);
-    Localization localization = Mockito.mock(Localization.class);
+    Location location = Mockito.mock(Location.class);
 
     @Test
     //Osoba zainteresowana może zostać zapisana do danej lokalizacji i zacznie otrzymywać powiadomienia
     public void shouldClientCanBeSignedInLocation() {
         //Wywołujemy metody, które chcemy przetestować
-        //weatherAlertService.addSubscriber(client);
-        //weatherAlertService.addLocalization(localization);
-        weatherAlertService.subscribeToLocalization(localization, client);
-        weatherAlertService.sendNotification(notification);
+        weatherAlertService.addSubscriber(client, "Michałowice");
+        //weatherAlertService.addLocation(location);
+        //weatherAlertService.subscribeToLocalization(localization, client);
+        weatherAlertService.sendNotification(notification,"Michałowice");
         //Sprawdzamy czy metoda receive została wywołana
         Mockito.verify(client, Mockito.times(1)).receive(notification);
     }
@@ -28,8 +28,9 @@ public class WeatherAlertServiceTestSuite {
     public void shouldClientDeleteLocationSubscription() {
         //Wywołujemy metody, które chcemy przetestować
         //weatherAlertService.addLocalization(localization);
-        weatherAlertService.subscribeToLocalization(localization, client);
-        weatherAlertService.sendNotification(notification);
+        weatherAlertService.removeSubscriber(client);
+        weatherAlertService.removeLocation(location);
+        weatherAlertService.sendNotification(notification, "Bydgoszcz");
         //Sprawdzamy czy metoda receive została wywołana
         Mockito.verify(client, Mockito.never()).receive(notification);
     }
@@ -38,9 +39,9 @@ public class WeatherAlertServiceTestSuite {
     //Można wycofać subskrypcję ze wszystkich lokalizacji, co równa się kompletnemu wypisaniu klienta z powiadomień.
     public void shouldClientStopReceivingNotifications() {
         //Wywołujemy metody, które chcemy przetestować
-        weatherAlertService.removeAllLocalization(localization);
+        weatherAlertService.removeAllLocation(location);
         weatherAlertService.removeSubscriber(client);
-        weatherAlertService.sendNotification(notification);
+        weatherAlertService.sendNotification(notification, "Warszawa");
         //Sprawdzamy czy metoda receive została wywołana
         Mockito.verify(client, Mockito.never()).receive(notification);
     }
@@ -51,8 +52,8 @@ public class WeatherAlertServiceTestSuite {
         //Wywołujemy metody, które chcemy przetestować
         //weatherAlertService.addSubscriber(client,localization);
         //weatherAlertService.addLocalization(localization);
-        weatherAlertService.subscribeToLocalization(localization, client);
-        weatherAlertService.sendNotification(notification);
+        weatherAlertService.addSubscriber(client, "Michałowice");
+        weatherAlertService.sendNotification(notification, "Michałowice");
         //  //Sprawdzamy czy metoda receive została wywołana
         Mockito.verify(client, Mockito.times(1)).receive(notification);
 }
@@ -63,14 +64,17 @@ public void shouldAllSubsribersNotifications(){
         Client firstClient = Mockito.mock(Client.class);
         Client secondClient = Mockito.mock(Client.class);
         Client thirdClient = Mockito.mock(Client.class);
-        //weatherAlertService.addSubscriber(firstClient);
-        //weatherAlertService.addSubscriber(secondClient);
-        //weatherAlertService.addSubscriber(thirdClient);
-        weatherAlertService.subscribeToLocalization(localization, firstClient);
-        weatherAlertService.subscribeToLocalization(localization, secondClient);
-        weatherAlertService.subscribeToLocalization(localization, thirdClient);
 
-        weatherAlertService.sendNotification(notification);
+        weatherAlertService.addSubscriber(firstClient, "Szczecin");
+        weatherAlertService.addSubscriber(secondClient, "Michałowice");
+        weatherAlertService.addSubscriber(thirdClient, "Kraków");
+        //weatherAlertService.addSubscriber(localization, firstClient);
+        //weatherAlertService.addSubscriber(localization, secondClient);
+        //weatherAlertService.addSubscriber(localization, thirdClient);
+
+        weatherAlertService.sendNotification(notification, "Szczecin");
+        weatherAlertService.sendNotification(notification, "Michałowice");
+        weatherAlertService.sendNotification(notification, "Kraków");
         Mockito.verify(firstClient, Mockito.times(1)).receive(notification);
         Mockito.verify(secondClient, Mockito.times(1)).receive(notification);
         Mockito.verify(thirdClient, Mockito.times(1)).receive(notification);
@@ -79,8 +83,8 @@ public void shouldAllSubsribersNotifications(){
     //Możliwość skasowania danej lokalizacji.
     public void ShouldBeAbleToDeleteCurrentLocation() {
         //Możliwość skasowania danej lokalizacji.
-        weatherAlertService.removeLocalization(localization);
-        weatherAlertService.sendNotification(notification);
+        weatherAlertService.removeLocation(location);
+        weatherAlertService.sendNotification(notification, "Warszawa");
         Mockito.verify(client, Mockito.never()).receive(notification);
     }
 }

@@ -7,48 +7,49 @@ import java.util.Set;
 
 public class WeatherAlertService {
 
-    //private Map<String,Set<Client>> clients = new HashMap<>();
-    Map<Localization, Set<Client>> localizationClientMap = new HashMap<>();
-
+    private Map<String,Set<Client>> clients = new HashMap<>();
+    //Map<Localization, Set<Client>> localizationClientMap = new HashMap<>();
+    //Set<Client> clientSet = new HashSet<>();
 
     //Osoba zainteresowana może zostać zapisana do danej lokalizacji
 
-    //public void addSubscriber(Client client, String location) {
-        //if(clients.containsKey(location)){
-            //clients.get(location).add(client);
-        //} else {
-            //Set<Client> clientSet = new HashSet<>();
-            //clientSet.add(client);
-            //clients.put(location,clientSet);
-        //}
-    //}
-
-    public void subscribeToLocalization (Localization localization, Client client) {
-        this.localizationClientMap.get(localization).add(client);
+    public void addSubscriber(Client client, String location) {
+        if(clients.containsKey(location)){
+            clients.get(location).add(client);
+        } else {
+            Set<Client> clientSet = new HashSet<>();
+            //umieszczamy obiekty w mapie clients
+            clientSet.add(client);
+            clients.put(location,clientSet);
+        }
     }
+
+    //public void subscribeToLocalization (Localization localization, Client client) {
+        //this.localizationClientMap.get(localization).add(client);
+    //}
 
     //Każda wiadomość powinna dotrzeć do subskrybentów
-    //public void sendNotification(Notification notification, String location) {
-        //if(clients.containsKey(location)){
-            //this.clients.get(location).forEach(client -> client.receive(notification));
-        //}
-    //}
-
-    public void sendNotification (Notification notification){
-        this.localizationClientMap.forEach((localization, client) -> client.recive(notification));
+    public void sendNotification(Notification notification, String location) {
+        if(clients.containsKey(location)){
+            this.clients.get(location).forEach(client -> client.receive(notification));
+        }
     }
+
+    //public void sendNotification (Notification notification){
+        //this.clients.forEach((localization, client) -> client.remove(notification));
+    //}
 
 
     //Metoda- usunięcie wszystkich lokalizacji
-    public void removeAllLocalization(Localization localization) {
-        this.localizationClientMap.remove(localization);
+    public void removeAllLocation(Location location) {
+        this.clients.remove(location);
     }
     //Metoda- skasowanie subskrybującego
     public void  removeSubscriber(Client client) {
-        this.localizationClientMap.remove(client);
+        this.clients.remove(client);
     }
     //metoda skasowania lokalizacji
-    public void removeLocalization(Localization localization) {
-        this.localizationClientMap.remove(localization);
+    public void removeLocation(Location location) {
+        this.clients.remove(location);
     }
 }
