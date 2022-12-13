@@ -38,18 +38,27 @@ public class WeatherAlertService {
     //public void sendNotification (Notification notification){
         //this.clients.forEach((localization, client) -> client.remove(notification));
     //}
-
-
-    //Metoda- usunięcie wszystkich lokalizacji
-    public void removeAllLocation(Location location) {
-        this.clients.remove(location);
+    public void deleteClientFromLocation (String location, Client client){
+        if(clients.containsKey(location)){
+            this.clients.get(location).remove(client);
+        }
     }
+public void NotifyAll (Notification notification){
+        Set<Client>allClients=new HashSet<>();
+        for (Set<Client>c:this.clients.values()){
+            allClients.addAll(c);
+        }
+        allClients.forEach(client -> client.receive(notification));
+}
     //Metoda- skasowanie subskrybującego
     public void  removeSubscriber(Client client) {
-        this.clients.remove(client);
+        for (Set<Client>c:this.clients.values()){
+            c.remove(client);
+        }
     }
+
     //metoda skasowania lokalizacji
-    public void removeLocation(Location location) {
+    public void removeLocation(String location) {
         this.clients.remove(location);
     }
 }
