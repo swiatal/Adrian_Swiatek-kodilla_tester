@@ -4,14 +4,16 @@ public class Person {
 
     private double heightInMeters;
     private double weightInKilogram;
-
+    //Cel metody: zwrócić takiego Stringa jaki jest przyjęty dla danego poziomu bmi
+    //Test nie jest przygotowany na to, że może być przekazany do niego null
     public Person(double heightInMeters, double weightInKilogram) {
         this.heightInMeters = heightInMeters;
         this.weightInKilogram = weightInKilogram;
     }
-
+    //Metoda z osobną klasą przygotowującą dane testowe
     public String getBMI() {
         double bmi = weightInKilogram / (heightInMeters * heightInMeters);
+        //jeslli bmi jest takie to zwraca takiego Stringa itd
         if (bmi < 15) {
             return "Very severely underweight";
         } else if (bmi < 16) {
@@ -36,3 +38,6 @@ public class Person {
         return "Obese Class VI (Hyper Obese)";
     }
 }
+//Jakie przypadki testowe:
+//oblicza wartość bmi na podstawie danych testowych z odrębnej klasy
+//zwraca wartość oczekiwaną

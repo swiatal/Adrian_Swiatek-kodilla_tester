@@ -26,6 +26,8 @@ private Teacher teacher;
         return Objects.equals(name, student.name) && Objects.equals(teacher, student.teacher);
     }
     //Nadpisanie metody hashCode - generuje sie automatycznie, sprawdza jaką wartość ma obiekt
+
+
     @Override
     public int hashCode() {
         return Objects.hash(name, teacher);

@@ -5,6 +5,14 @@ import java.util.Random;
 import java.util.Set;
 
 public class GamblingMachine {
+    //Cel metody: zwrócić liczbę wylosowaną przez użytkownika
+    //jeśli liczba jest błędnego rozmiaru lub nie jest ona z zadeklarowanego przedziału ma wyrzucać wyjątek
+    //liczba powinna być z przedziału 1-49
+    //ma zwracać liczby w rozmiarze (ilości ) różnej od 6
+
+    //W pierwszej kolejności trzeba sprawdzić ile jest metod publicznych, a ile prywatnych
+    //Jest tylko jedna metoda publiczna, ale ona wywołuje wszystkie prywatne
+    //W testach trzeba zwrócić uwagę na to gdzie są if
 
     public int howManyWins(Set<Integer> userNumbers) throws InvalidNumbersException {
         validateNumbers(userNumbers);
@@ -42,3 +50,9 @@ public class GamblingMachine {
         return numbers;
     }
 }
+//Jakie przypadki testowe:
+// powinien wyrzucać wyjątek jeśli rozmiar (ilość) jest > 6
+// powinien wyrzucać wyjątek jeśli rozmiar (ilość) jest < 6
+// powinien wyrzucać wyjątek jeśli którakolwiek z liczb poza zakresem
+// powinien wyrzucać wyjątek jeśli którakolwiek z liczb jest w zadeklarowanym zakresie, ale
+//jest <1 lub >49

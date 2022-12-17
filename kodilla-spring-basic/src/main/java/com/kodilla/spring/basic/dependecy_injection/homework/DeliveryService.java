@@ -4,3 +4,4 @@ public interface DeliveryService {
      //Metoda deliverPackage wyświetla adres i wagę
      boolean deliverPackage (String address, double weight);
 }
+

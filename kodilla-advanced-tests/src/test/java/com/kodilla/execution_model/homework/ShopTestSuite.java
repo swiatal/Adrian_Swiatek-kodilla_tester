@@ -1,12 +1,8 @@
 package com.kodilla.execution_model.homework;
 import org.junit.jupiter.api.*;
-
 import java.time.LocalDate;
-import java.time.Period;
-import java.util.ArrayList;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
-
 public class ShopTestSuite {
     //Przeniesienie zmiennych z wnętrza metod testujących do zmiennych klasy
     //Given
@@ -28,6 +24,8 @@ public class ShopTestSuite {
 
         int numberOfOrder = shop.getSize();
         //Then
+        //to ma zwracać ilość dodanych zamówień
+        //jeśli żadne zamówienie nie jest dodane to nie zwróci 1
         assertEquals(1, numberOfOrder);
     }
     //2. Wpisanie zakresu dat (od do) i sprawdzenie czy pokazuje nam zamówienia z tego zakresu
@@ -38,7 +36,10 @@ public class ShopTestSuite {
        shop.addOrder(Zosia);
        shop.addOrder(Piotr);
        shop.addOrder(Franek);
-        List<Order> result = shop.getOrdersByDate(LocalDate.of(2020,11,1),LocalDate.of(2021,12,15));//nazwa zmiennej z kolekcji metody getOrdersByDate
+       //tworzymy daty, które zwrócą jakieś zamówienia
+        //tworzymy daty za pomocą LocalDate.of
+       List<Order> result = shop.getOrdersByDate(LocalDate.of(2020,11,1),LocalDate.of(2021,12,15));
+       //nazwa zmiennej z kolekcji metody getOrdersByDate
        assertEquals(2,result.size());
 
     }
@@ -51,6 +52,7 @@ public class ShopTestSuite {
         List<Order> result = shop.getOrdersByValue(1230, 2400);
 
         //Then
+        //sprawdzamy ilość zamówień
         assertEquals(2, result.size());
     }
 
@@ -60,6 +62,7 @@ public class ShopTestSuite {
         shop.addOrder(Zosia);
         shop.addOrder(Piotr);
         shop.addOrder(Franek);
+        //aby zsumować zamówienia, dodajemy wszystkie do sklepu
         double sumResult = shop.sumOrder();
     //Then
         assertEquals(5231.4, sumResult);

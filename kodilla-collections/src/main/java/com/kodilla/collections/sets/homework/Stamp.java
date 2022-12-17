@@ -36,7 +36,7 @@ public class Stamp {
         Stamp stamp = (Stamp) o;
         return Double.compare(stamp.stampHeight, stampHeight) == 0
         && Double.compare(stamp.stampWidth, stampWidth) == 0
-                && Boolean.compare(stamp.stamped, stamp.stamped) == 0
+                && Boolean.compare(stamp.stamped, stamped) == 0
                 && this.stampName.equals(stamp.stampName);
     }
 

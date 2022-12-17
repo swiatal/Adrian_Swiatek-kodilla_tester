@@ -20,12 +20,13 @@ public class RandomApp {
         double c = random.nextDouble() * 100 + 1;
 
         if (drawnShapeKind == 1){
-        return new Circle(5);}
-else if (drawnShapeKind == 0){
-    return new Square(b);
+           return new Circle(5);
         }
-else {
-    return new Triangle(a, b, c);
+        else if (drawnShapeKind == 0){
+           return new Square(b);
+        }
+        else {
+           return new Triangle(a, b, c);
         }
     }
 }
