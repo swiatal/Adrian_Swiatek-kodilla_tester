@@ -18,7 +18,7 @@ public class BookDto {
 
     public String getAuthor() { return author; }
 
-   /* @Override
+   @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -30,7 +30,5 @@ public class BookDto {
     public int hashCode() {
         return Objects.hash(title, author);
     }
-
-    */
 }
 

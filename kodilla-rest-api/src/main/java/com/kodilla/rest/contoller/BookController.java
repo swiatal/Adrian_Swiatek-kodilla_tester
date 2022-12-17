@@ -22,10 +22,10 @@ class BookController {
     public void addBook(@RequestBody BookDto bookDto) {
         bookService.addBook(bookDto);
     }
-  /*
+
     @DeleteMapping
-    public void remove (@RequestBody BookDto bookDto){
+    public void removeBook (@RequestBody BookDto bookDto){
         bookService.removeBook(bookDto);
     }
-    */
+
 }
