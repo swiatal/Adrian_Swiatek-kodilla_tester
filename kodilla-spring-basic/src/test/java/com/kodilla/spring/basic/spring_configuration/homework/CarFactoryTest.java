@@ -11,7 +11,7 @@ import java.time.LocalTime;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class CarFactoryTest {
+public class CarFactoryTest {
     @Test
     public void shouldPickCarOnSeason(){
 
