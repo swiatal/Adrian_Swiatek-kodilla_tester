@@ -8,10 +8,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import java.time.LocalTime;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
-public class CarFactoryTest {
+public class CarFactoryTestSuite {
     @Test
     public void shouldPickCarOnSeason(){
 
@@ -24,23 +22,23 @@ public class CarFactoryTest {
         Assertions.assertEquals("Cabrio", carType);
 
         //given
-        Car car1 = (Car)context.getBean("pickCar","winter");
+        car = (Car)context.getBean("pickCar","winter");
         //when
-        String carType1 = car.getCarType();
+        carType = car.getCarType();
         //then
         Assertions.assertEquals("SUV", carType);
 
         //given
-        Car car2 = (Car)context.getBean("pickCar","autumn");
+        car = (Car)context.getBean("pickCar","autumn");
         //when
-        String carType2 = car.getCarType();
+        carType = car.getCarType();
         //then
         Assertions.assertEquals("Sedan", carType);
 
         //given
-        Car car3 = (Car)context.getBean("pickCar","spring");
+        car = (Car)context.getBean("pickCar","spring");
         //when
-        String carType3 = car.getCarType();
+        carType = car.getCarType();
         //then
         Assertions.assertEquals("Sedan", carType);
     }
@@ -50,14 +48,14 @@ public class CarFactoryTest {
         //given
        Car car = (Car)context.getBean("pickCar","summer");
        //when
-       boolean hashHeadlightsTurnedOn = car.hasHeadlightsTurnedOn(LocalTime.of(22,15));
+       boolean hasHeadlightsTurnedOn= car.hasHeadlightsTurnedOn(LocalTime.of(22,15));
        //then
-       Assertions.assertTrue(hashHeadlightsTurnedOn);
+       Assertions.assertTrue(hasHeadlightsTurnedOn);
        //given
        Car car1 = (Car) context.getBean("pickCar","winter");
        //when
-       boolean hashHeadlightsTurnedOn1  = car.hasHeadlightsTurnedOn(LocalTime.of(14,20));
+       boolean hasHeadlightsTurnedOn1  = car.hasHeadlightsTurnedOn(LocalTime.of(14,20));
        //then
-       Assertions.assertFalse(hashHeadlightsTurnedOn1);
+       Assertions.assertFalse(hasHeadlightsTurnedOn1);
    }
 }

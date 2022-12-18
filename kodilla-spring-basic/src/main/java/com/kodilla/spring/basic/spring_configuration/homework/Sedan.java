@@ -4,8 +4,8 @@ import java.time.LocalTime;
 
 public class Sedan implements Car{
     @Override
-    public boolean hashHeadlightsTurnedOn(LocalTime time) {
-        return time.compareTo(LocalTime.of(20,0))>0 || time.compareTo(LocalTime.of(6,0))<=0;
+    public boolean hasHeadlightsTurnedOn(LocalTime time){
+        return time.compareTo(LocalTime.of(20,0))>0 || time.compareTo(LocalTime.of(6,0))<0;
     }
     @Override
     public String getCarType() {
