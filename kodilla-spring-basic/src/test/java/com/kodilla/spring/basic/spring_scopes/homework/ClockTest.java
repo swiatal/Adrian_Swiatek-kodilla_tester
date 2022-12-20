@@ -1,14 +1,14 @@
 package com.kodilla.spring.basic.spring_scopes.homework;
 
-import com.kodilla.spring.basic.dependecy_injection.homework.Application;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.time.LocalTime;
-
-public class ClockTestSuite {
+@SpringBootTest
+public class ClockTest {
     @Test
     public void shouldNotSameTime() {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");

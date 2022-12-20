@@ -1,4 +1,4 @@
-package com.kodilla.spring.basic.dependency_injection;
+package com.kodilla.spring.basic.spring_dependency_injection;
 
 import com.kodilla.spring.basic.dependecy_injection.MessageService;
 import org.springframework.stereotype.Component;

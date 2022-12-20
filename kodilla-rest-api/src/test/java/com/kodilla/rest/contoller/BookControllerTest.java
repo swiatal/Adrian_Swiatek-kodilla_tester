@@ -4,6 +4,7 @@ import com.kodilla.rest.domain.BookDto;
 import com.kodilla.rest.service.BookService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,18 +37,16 @@ public class BookControllerTest {
         //given
             BookService bookServiceMock = Mockito.mock(BookService.class);
             BookController bookController = new BookController(bookServiceMock);
-            List<BookDto> booksList = new ArrayList<>();
+            //List<BookDto> booksList = new ArrayList<>();
             BookDto book = new BookDto("Tittle 1", "Author 1");
-            booksList.add(book);
-            Mockito.when(bookServiceMock.getBooks()).thenReturn(booksList);
+            //Mockito.when(bookServiceMock.getBooks()).thenReturn(booksList);
 
             //when
             bookController.addBook(book);
-            List<BookDto> result = bookController.getBooks();
+            //List<BookDto> result = bookController.getBooks();
 
             //then
-            Mockito.verify(bookServiceMock).addBook(book);
-            assertEquals(book,result.get(0));
+            Mockito.verify(bookServiceMock,Mockito.times(1)).addBook(book);
         }
     }
 

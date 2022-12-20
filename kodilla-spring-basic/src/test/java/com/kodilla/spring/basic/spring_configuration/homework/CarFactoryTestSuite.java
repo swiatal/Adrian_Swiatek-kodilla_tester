@@ -15,47 +15,24 @@ public class CarFactoryTestSuite {
 
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         //given
-        Car car = (Car)context.getBean("pickCar","summer");
+        Car car = (Car)context.getBean("pickCar");
         //when
         String carType = car.getCarType();
         //then
-        Assertions.assertEquals("Cabrio", carType);
-
-        //given
-        car = (Car)context.getBean("pickCar","winter");
-        //when
-        carType = car.getCarType();
-        //then
         Assertions.assertEquals("SUV", carType);
-
-        //given
-        car = (Car)context.getBean("pickCar","autumn");
-        //when
-        carType = car.getCarType();
-        //then
-        Assertions.assertEquals("Sedan", carType);
-
-        //given
-        car = (Car)context.getBean("pickCar","spring");
-        //when
-        carType = car.getCarType();
-        //then
-        Assertions.assertEquals("Sedan", carType);
     }
    @Test
    public void shouldTurnOnHeadlightsDependsOnTime() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        //given
-       Car car = (Car)context.getBean("pickCar","summer");
-       //when
-       boolean hasHeadlightsTurnedOn= car.hasHeadlightsTurnedOn(LocalTime.of(22,15));
-       //then
-       Assertions.assertTrue(hasHeadlightsTurnedOn);
+       ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
        //given
-       Car car1 = (Car) context.getBean("pickCar","winter");
+       Car car = (Car) context.getBean("pickCar");
        //when
-       boolean hasHeadlightsTurnedOn1  = car.hasHeadlightsTurnedOn(LocalTime.of(14,20));
-       //then
-       Assertions.assertFalse(hasHeadlightsTurnedOn1);
+       boolean hasHeadlightsTurnedOn = car.hasHeadlightsTurnedOn();
+       LocalTime localTime = LocalTime.now();
+       if (localTime.isAfter(LocalTime.of(20, 0)) && (localTime.isBefore(LocalTime.of(6, 0)))) {
+           Assertions.assertTrue(hasHeadlightsTurnedOn);
+       } else {
+           Assertions.assertFalse(hasHeadlightsTurnedOn);
+       }
    }
 }
