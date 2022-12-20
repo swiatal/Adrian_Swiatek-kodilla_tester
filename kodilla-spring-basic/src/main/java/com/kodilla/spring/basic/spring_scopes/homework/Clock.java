@@ -3,13 +3,20 @@ package com.kodilla.spring.basic.spring_scopes.homework;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Component
 @Scope("prototype")
 public class Clock {
-    public LocalTime time = LocalTime.now();
-    public LocalTime getTime(){
-        return time;
+    private LocalTime localTime;
+
+
+    public void updateTime() {
+        localTime = LocalTime.now();
     }
-}
+
+       public LocalTime getLocalTime() {
+        return localTime;
+        }
+    }
