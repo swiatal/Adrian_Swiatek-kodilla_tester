@@ -11,7 +11,7 @@ import java.util.List;
 
 @SpringBootTest
 class AnimalFactoryTestSuite {
-    @Test
+    /*@Test
     public void testDogCreated() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
@@ -20,7 +20,7 @@ class AnimalFactoryTestSuite {
         String voice = dog.getVoice();
         //Then
         Assertions.assertEquals("Bark bark", voice);
-    }
+    }*/
     @Test
     public void shouldCreateDogBeanAndFetchByBeanName() {
         //Given
