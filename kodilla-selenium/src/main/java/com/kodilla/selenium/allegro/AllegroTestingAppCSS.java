@@ -8,7 +8,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AllegroTestingApp {
+import java.util.List;
+
+public class AllegroTestingAppCSS {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:\\Selenium-drivers\\Chrome\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -16,15 +18,20 @@ public class AllegroTestingApp {
 
         WebDriverWait wait = new WebDriverWait (driver, 10);
 
-        WebElement acceptButton = driver.findElement(By.xpath("//*/button[@data-role=\"accept-consent\"]"));
+        WebElement acceptButton = driver.findElement(By.cssSelector("button[data-role*=accept-consent]"));
         wait.until(ExpectedConditions.visibilityOf(acceptButton)).click();
 
-        WebElement category = driver.findElement(By.xpath("//*/div[@class=\"mp7g_oh mr3m_1 s4kyg\"]/select/optgroup/option[3]"));
+        WebElement category = driver.findElement(By.cssSelector(".mp7g_oh select optgroup option[value=\"/kategoria/elektronika\"]"));
         wait.until(ExpectedConditions.visibilityOf(category)).click();
 
-        WebElement inputField = driver.findElement(By.xpath("//*/input[@name=\"string\"]"));
+        WebElement inputField = driver.findElement(By.cssSelector(".mp4t_8 div div .mpof_ki input"));
         wait.until(ExpectedConditions.visibilityOf(inputField));
         inputField.sendKeys("Mavic mini");
         inputField.submit();
+
+        List<WebElement> articles = driver.findElements(By.cssSelector("section > article"));
+        for (WebElement article : articles) {
+            System.out.println(article.getText());
+        }
     }
 }
