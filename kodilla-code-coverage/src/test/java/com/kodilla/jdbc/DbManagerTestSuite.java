@@ -92,17 +92,22 @@ public class DbManagerTestSuite {
         return count;
     }
     @Test
-        void testSelectUsersAndPosts() throws SQLException {
-        String sqlQuery = "SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) AS POSTS_NUMBER FROM USERS U JOIN POSTS P ON U.ID = P.USER_ID GROUP BY P.USER_ID HAVING COUNT(*) >=2";
+    void testSelectUsersAndPosts() throws SQLException {
+        String sqlQuery = "SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) AS POSTS_NUMBER " +
+                "FROM USERS U " +
+                "JOIN POSTS P ON U.ID = P.USER_ID " +
+                "GROUP BY P.USER_ID " +
+                "HAVING COUNT(*) >=2";
         Statement statement = createStatement();
         ResultSet rs = statement.executeQuery(sqlQuery);
         int counter = 0;
         while (rs.next()) {
-        System.out.println(rs.getString("FIRSTNAME") + "," + rs.getString("LASTNAME"));
-        counter++;
+            System.out.println(rs.getString("FIRSTNAME") +
+                    "," + rs.getString("LASTNAME"));
+            counter++;
         }
         Assertions.assertEquals(2,counter);
         rs.close();
         statement.close();
-        }
+    }
 }
