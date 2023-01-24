@@ -12,6 +12,15 @@ public class AnimalFactory {
     public Dog createDog() {
         return new Dog();
     }
+
+    @Bean
+    public Cat createCat() {
+        return new Cat();
+    }
+    @Bean
+    public Duck createDuck() {
+        return new Duck();
+    }
     @Bean
     public Animal randomAnimal() {
         Animal animal;
